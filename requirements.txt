@@ -115,4 +115,8 @@ wcwidth>=0.1.7
 webencodings>=0.5.1
 wrapt>=1.11.2
 xkit>=0.0.0
+<<<<<<< HEAD
 zipp>=0.6.0
+=======
+zipp>=0.6.0
+>>>>>>> c879f420fe703488508ffb0dc6d643e055071e4b
