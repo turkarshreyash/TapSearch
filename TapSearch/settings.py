@@ -28,7 +28,7 @@ SECRET_KEY = '%2tt0m02*(8hd79naew#&&8$8=7pl(kwvg44(kn+vee9j@+qw5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["tapchiefinternassign.herokuapp.com"]
 
 
 # Application definition
