@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="{% url 'wordsearch:search' %}">
+                        {% csrf_token %}
+                        <h5>Word Search</h5>
+                        <p>
+                            Display at max top 10 paragraphs in which it occured!
+                        </p>
+                        <div class="form-group">
+                            <label for="word1">Search a Word</label>
+                            <input class="form-control" id="word1" type="text" name="word" placeholder="Enter a word"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="{% url 'wordsearch:feedpara' %}">
+                        {% csrf_token %}
+                        <h5>Indexing</h5>
+                        <p>
+                            This will index the given document
+                        </p>
+                        <div class="form-group">
+
+                            <label for="exampleFormControlTextarea1">Enter Paragraphs</label>
+                            <textarea class="form-control" name="long_string" id="exampleFormControlTextarea1" rows="3"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                    </form>
+                    <hr>
+                    <h5>OR</h5>
+                    <p>
+                        Upload PDF
+                    </p>
+                    <form method="POST" action="{% url 'wordsearch:feedpdf' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button type="submit" class="input-group-text"
+                                    id="inputGroupFileAddon01">Upload</button>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                                    aria-describedby="inputGroupFileAddon01" required>
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="{% url 'wordsearch:clear' %}">
+                        {% csrf_token %}
+                        <h5>Danger Zone!!</h5>
+                        <h6>Clear!</h6>
+                        <p>
+                            This will clear the index and all indexed documents
+                        </p>
+                        <button type="submit" class="btn btn-primary">Go Ahead!</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
